@@ -1,11 +1,11 @@
 
 # 🦾 VersaSens Repository
 
-Welcome to the official VersaSens repository! Dive into the future of wearable technology with VersaSens – a revolutionary, modular platform for next-gen edge-AI wearable sensors. 🚀
+Welcome to the official VersaSens repository! Dive into the future of wearable technology with [VersaSens](https://www.epfl.ch/labs/esl/research/smart-wearables/versasens/) – a revolutionary, modular platform for next-gen edge-AI wearable sensors. 🚀
 
 ## What is VersaSens? 🤔
 
-VersaSens is your gateway to pioneering research in wearable sensors and edge computing. This platform is designed to be **versatile**, **scalable**, and **customizable**, supporting a wide range of applications. Whether it's monitoring health metrics or detecting seizures, VersaSens has got you covered with its low-energy, high-efficiency architecture. 💡
+[VersaSens](https://www.epfl.ch/labs/esl/research/smart-wearables/versasens/) is your gateway to pioneering research in wearable sensors and edge computing. This platform is designed to be **versatile**, **scalable**, and **customizable**, supporting a wide range of applications. Whether it's monitoring health metrics or detecting seizures, VersaSens has got you covered with its low-energy, high-efficiency architecture. 💡
 
 ### Key Features:
 - **Modular Design:** Easily swap and mix modules to fit your specific research needs. 🛠️
