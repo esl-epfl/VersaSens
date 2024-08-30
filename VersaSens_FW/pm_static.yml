@@ -1,0 +1,35 @@
+app:
+  address: 0x0
+  end_address: 0x100000
+  region: flash_primary
+  size: 0x100000
+otp:
+  address: 0xff8100
+  end_address: 0xff83fc
+  region: otp
+  size: 0x2fc
+rpmsg_nrf53_sram:
+  address: 0x20070000
+  end_address: 0x20080000
+  placement:
+    before:
+    - end
+  region: sram_primary
+  size: 0x10000
+sram_primary:
+  address: 0x20000000
+  end_address: 0x20070000
+  region: sram_primary
+  size: 0x70000
+external_flash:
+  address: 0x0
+  end_address: 0x800000
+  region: external_flash
+  size: 0x800000
+  affiliation:
+  - disk
+  extra_params:
+    disk_cache_size: 4096
+    disk_name: NAND
+    disk_read_only: 0x0
+    disk_sector_size: 512

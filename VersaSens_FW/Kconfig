@@ -1,0 +1,4 @@
+config MASS_STORAGE_DISK_NAME
+	default "SD"
+
+source "Kconfig.zephyr"

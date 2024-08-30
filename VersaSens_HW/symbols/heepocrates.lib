@@ -1,0 +1,99 @@
+EESchema-LIBRARY Version 2.3
+DEF heepocrates U 0 20 Y Y 1 L N
+F0 "U" 150 1050 50 H V R CNN
+F1 "heepocrates" 150 950 50 H V R CNN
+F2 "" 150 850 50 H I R CNN
+F3 "" 150 650 50 H I R CNN
+DRAW
+X spi_flash_sd_0_io 5 0 0 200 R 50 50 1 1 B 
+X spi_flash_sd_1_io 6 0 -100 200 R 50 50 1 1 B 
+X spi_flash_sd_2_io 7 0 -200 200 R 50 50 1 1 B 
+X spi_flash_sd_3_io 8 0 -300 200 R 50 50 1 1 B 
+X spi_flash_cs_0_io 9 0 -400 200 R 50 50 1 1 B 
+X spi_flash_sck_io 10 0 -500 200 R 50 50 1 1 B 
+X rst_ni 11 0 -600 200 R 50 50 1 1 I 
+X ref_clk_i 12 0 -700 200 R 50 50 1 1 I 
+X uart_rx_i 13 0 -800 200 R 50 50 1 1 B 
+X uart_tx_o 14 0 -900 200 R 50 50 1 1 B 
+X fll_clk_div_io 15 0 -1000 200 R 50 50 1 1 B 
+X exit_valid_o 16 0 -1100 200 R 50 50 1 1 B 
+X exit_value_o 17 0 -1200 200 R 50 50 1 1 B 
+X spi_sd_0_io 23 0 -1300 200 R 50 50 1 1 B 
+X spi_sd_1_io 24 0 -1400 200 R 50 50 1 1 B 
+X spi_sd_2_io 25 0 -1500 200 R 50 50 1 1 B 
+X spi_sd_3_io 26 0 -1600 200 R 50 50 1 1 B 
+X spi_cs_1_io 27 0 -1700 200 R 50 50 1 1 B 
+X spi_cs_0_io 28 0 -1800 200 R 50 50 1 1 B 
+X spi_sck_io 29 0 -1900 200 R 50 50 1 1 B 
+X jtag_tdo_o 79 0 -2000 200 R 50 50 1 1 O 
+X jtag_tdi_i 80 0 -2100 200 R 50 50 1 1 I 
+X jtag_trst_ni 81 0 -2200 200 R 50 50 1 1 I 
+X jtag_tms_i 82 0 -2300 200 R 50 50 1 1 I 
+X jtag_tck_i 83 0 -2400 200 R 50 50 1 1 I 
+X bypass_fll_i 84 0 -2500 200 R 50 50 1 1 I 
+X execute_from_flash_i 85 0 -2600 200 R 50 50 1 1 I 
+X boot_select_i 86 0 -2700 200 R 50 50 1 1 I 
+X i2c_sda_io 87 0 -2800 200 R 50 50 1 1 B 
+X i2c_scl_io 88 0 -2900 200 R 50 50 1 1 B 
+X gpio_0_io 74 4200 -2900 200 L 50 50 1 1 B 
+X gpio_1_io 73 4200 -2800 200 L 50 50 1 1 B 
+X gpio_2_io 72 4200 -2700 200 L 50 50 1 1 B 
+X gpio_3_io 71 4200 -2600 200 L 50 50 1 1 B 
+X gpio_4_io 68 4200 -2500 200 L 50 50 1 1 B 
+X gpio_5_io 67 4200 -2400 200 L 50 50 1 1 B 
+X gpio_6_io 66 4200 -2300 200 L 50 50 1 1 B 
+X gpio_7_io 65 4200 -2200 200 L 50 50 1 1 B 
+X gpio_8_io 62 4200 -2100 200 L 50 50 1 1 B 
+X gpio_9_io 61 4200 -2000 200 L 50 50 1 1 B 
+X gpio_10_io 58 4200 -1900 200 L 50 50 1 1 B 
+X gpio_11_io 57 4200 -1800 200 L 50 50 1 1 B 
+X gpio_12_io 56 4200 -1700 200 L 50 50 1 1 B 
+X gpio_13_io 55 4200 -1600 200 L 50 50 1 1 B 
+X gpio_14_io 54 4200 -1500 200 L 50 50 1 1 B 
+X gpio_15_io 53 4200 -1400 200 L 50 50 1 1 B 
+X gpio_16_io 40 4200 -1300 200 L 50 50 1 1 B 
+X gpio_17_io 39 4200 -1200 200 L 50 50 1 1 B 
+X gpio_18_io 38 4200 -1100 200 L 50 50 1 1 B 
+X gpio_19_io 37 4200 -1000 200 L 50 50 1 1 B 
+X gpio_20_io 32 4200 -900 200 L 50 50 1 1 B 
+X gpio_21_io 31 4200 -800 200 L 50 50 1 1 B 
+X gpio_22_io 30 4200 -700 200 L 50 50 1 1 B 
+X gpio_23_io 18 4200 -600 200 L 50 50 1 1 B 
+X bladetest_SCin_i 46 4200 -500 200 L 50 50 1 1 I 
+X bladetest_SCout_o 45 4200 -400 200 L 50 50 1 1 O 
+X bladetest_scen_i 44 4200 -300 200 L 50 50 1 1 I 
+X bladetest_ck_i 43 4200 -200 200 L 50 50 1 1 I 
+X bladetest_oscOut_o 42 4200 -100 200 L 50 50 1 1 O 
+X bladetest_OSCen_i 41 4200 0 200 L 50 50 1 1 I 
+X cgra_vdd1 70 2800 1100 200 D 50 50 1 1 W 
+X cgra_vdd2 60 2700 1100 200 D 50 50 1 1 W 
+X bladetest_vdd1 52 2600 1100 200 D 50 50 1 1 W 
+X bladetest_vdd2 51 2500 1100 200 D 50 50 1 1 W 
+X bladetest_vdd3 50 2400 1100 200 D 50 50 1 1 W 
+X VDD_HEEP2 76 2300 1100 200 D 50 50 1 1 W 
+X VDD_HEEP3 35 2200 1100 200 D 50 50 1 1 W 
+X VDD_HEEP4 21 2100 1100 200 D 50 50 1 1 W 
+X VDD_HEEP1 1 2000 1100 200 D 50 50 1 1 W 
+X VDDIO1 78 1900 1100 200 D 50 50 1 1 W 
+X VDDIO2 64 1800 1100 200 D 50 50 1 1 W 
+X VDDIO3 48 1700 1100 200 D 50 50 1 1 W 
+X VDDIO4 33 1600 1100 200 D 50 50 1 1 W 
+X VDDIO5 19 1500 1100 200 D 50 50 1 1 W 
+X VDDIO6 3 1400 1100 200 D 50 50 1 1 W 
+X VSSIO6 4 1500 -4000 200 U 50 50 1 1 W 
+X VSSIO5 20 1600 -4000 200 U 50 50 1 1 W 
+X VSSIO4 34 1700 -4000 200 U 50 50 1 1 W 
+X VSSIO3 47 1800 -4000 200 U 50 50 1 1 W 
+X VSSIO2 63 1900 -4000 200 U 50 50 1 1 W 
+X VSSIO1 77 2000 -4000 200 U 50 50 1 1 W 
+X VSS_HEEP1 2 2100 -4000 200 U 50 50 1 1 W 
+X VSS_HEEP4 22 2200 -4000 200 U 50 50 1 1 W 
+X VSS_HEEP3 36 2300 -4000 200 U 50 50 1 1 W 
+X VSS_HEEP2 75 2400 -4000 200 U 50 50 1 1 W 
+X bladetest_gnd 49 2500 -4000 200 U 50 50 1 1 W 
+X cgra_gnd2 59 2600 -4000 200 U 50 50 1 1 W 
+X cgra_gnd1 69 2700 -4000 200 U 50 50 1 1 W 
+S 200 900 4000 -3800 1 1 10 f
+ENDDRAW
+ENDDEF
+#End Library

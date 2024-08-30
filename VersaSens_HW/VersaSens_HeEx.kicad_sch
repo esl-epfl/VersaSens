@@ -1,0 +1,128 @@
+(kicad_sch (version 20230121) (generator eeschema)
+
+  (uuid a9680c4f-e12a-4b20-bc4f-1fa44b63d443)
+
+  (paper "A4")
+
+  (title_block
+    (title "VersaSens+VersaHeepo")
+    (date "2024-02-20")
+    (rev "00")
+    (company "EPFL, Embedded Systems Laboratory")
+    (comment 1 "Author: Taraneh Aminosharieh Najafi")
+    (comment 2 "Approved: José Angel Miranda Calero")
+  )
+
+  (lib_symbols
+  )
+
+
+  (sheet (at 95.25 69.85) (size 100.33 38.1) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 3b3311f4-bf45-4453-ac7b-90d81b1284f5)
+    (property "Sheetname" "EMG" (at 95.25 68.2734 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "EMG.kicad_sch" (at 95.25 108.5346 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "VersaSens_HeEx"
+        (path "/a9680c4f-e12a-4b20-bc4f-1fa44b63d443" (page "5"))
+      )
+    )
+  )
+
+  (sheet (at 94.615 18.415) (size 100.965 38.1) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 57050f97-543f-4c0c-8310-f9933b915123)
+    (property "Sheetname" "ECG_PPG" (at 94.615 16.8384 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "ECG_PPG.kicad_sch" (at 94.615 57.0996 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "VersaSens_HeEx"
+        (path "/a9680c4f-e12a-4b20-bc4f-1fa44b63d443" (page "3"))
+      )
+    )
+  )
+
+  (sheet (at 213.36 17.78) (size 46.99 140.97)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 5855970f-696f-4f77-b66c-40e9c8c8cc64)
+    (property "Sheetname" "HEEPO" (at 213.36 16.51 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "VersaHeepo.kicad_sch" (at 213.36 159.3346 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "VersaSens_HeEx"
+        (path "/a9680c4f-e12a-4b20-bc4f-1fa44b63d443" (page "7"))
+      )
+    )
+  )
+
+  (sheet (at 95.25 120.65) (size 100.33 38.1) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 75d19714-d74d-456a-af4e-8fc949bc52fb)
+    (property "Sheetname" "EDA" (at 95.25 119.0734 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "EDA.kicad_sch" (at 95.25 159.3346 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "VersaSens_HeEx"
+        (path "/a9680c4f-e12a-4b20-bc4f-1fa44b63d443" (page "6"))
+      )
+    )
+  )
+
+  (sheet (at 21.59 17.78) (size 57.15 170.18) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid 7b36f882-0eca-4c48-be6d-6f9dac71ddf1)
+    (property "Sheetname" "Main" (at 21.59 16.2034 0)
+      (effects (font (size 3 3)) (justify left bottom))
+    )
+    (property "Sheetfile" "Main.kicad_sch" (at 21.59 188.5446 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "VersaSens"
+        (path "/00f0469f-5222-40df-bd30-b519d31e4fef" (page "2"))
+      )
+      (project "VersaSens_HeEx"
+        (path "/a9680c4f-e12a-4b20-bc4f-1fa44b63d443" (page "2"))
+      )
+    )
+  )
+
+  (sheet (at 99.06 172.72) (size 72.39 17.78) (fields_autoplaced)
+    (stroke (width 0.1524) (type solid))
+    (fill (color 0 0 0 0.0000))
+    (uuid b09db5ef-7fa7-486d-b35e-43780fd7fe7a)
+    (property "Sheetname" "Expansion" (at 99.06 172.0084 0)
+      (effects (font (size 1.27 1.27)) (justify left bottom))
+    )
+    (property "Sheetfile" "Expansion.kicad_sch" (at 99.06 191.0846 0)
+      (effects (font (size 1.27 1.27)) (justify left top))
+    )
+    (instances
+      (project "VersaSens_HeEx"
+        (path "/a9680c4f-e12a-4b20-bc4f-1fa44b63d443" (page "8"))
+      )
+    )
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+)

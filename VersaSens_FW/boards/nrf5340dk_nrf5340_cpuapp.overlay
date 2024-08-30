@@ -1,0 +1,62 @@
+#include "pinctrl.dtsi"
+
+&spi3 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    pinctrl-0 = <&spi_master>;
+    pinctrl-names = "default";
+};
+
+&i2c2 {
+    status = "okay";
+    compatible = "nordic,nrf-twim";
+    pinctrl-0 = <&i2c_master>;
+};
+
+&uart1 {
+    status = "disabled";
+    compatible = "nordic,nrf-uarte";
+};
+
+/ {
+	chosen {
+		nordic,pm-ext-flash = &mx25r64;
+	};
+};
+
+&pdm0 {
+    status = "okay";
+    compatible = "nordic,nrf-pdm";
+    pinctrl-0 = <&pdm_clk>;
+};
+
+&spi4 {
+    status = "okay";
+    compatible = "nordic,nrf-spim";
+    cs-gpios = <&gpio0 11 GPIO_ACTIVE_LOW>;
+
+    pinctrl-0 = <&spi_sd>;
+
+    sdhc0: sdhc@0 {
+            compatible = "zephyr,sdhc-spi-slot";
+            reg = <0>;
+            status = "okay";
+            mmc {
+                compatible = "zephyr,sdmmc-disk";
+                status = "okay";
+            };
+            spi-max-frequency = <32000000>;
+    };
+};
+
+&gpio_fwd {
+    status = "disabled";
+};
+
+&usbd {
+    cdc_acm_uart0: cdc_acm_uart0 {
+		status = "okay";
+        compatible = "zephyr,cdc-acm-uart";
+        label = "CDC_ACM_0";
+    };
+};

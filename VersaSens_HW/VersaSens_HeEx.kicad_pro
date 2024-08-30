@@ -1,0 +1,1808 @@
+{
+  "board": {
+    "3dviewports": [],
+    "design_settings": {
+      "defaults": {
+        "apply_defaults_to_fp_fields": false,
+        "apply_defaults_to_fp_shapes": false,
+        "apply_defaults_to_fp_text": false,
+        "board_outline_line_width": 0.1,
+        "copper_line_width": 0.2,
+        "copper_text_italic": false,
+        "copper_text_size_h": 0.75,
+        "copper_text_size_v": 0.75,
+        "copper_text_thickness": 0.15,
+        "copper_text_upright": false,
+        "courtyard_line_width": 0.05,
+        "dimension_precision": 4,
+        "dimension_units": 3,
+        "dimensions": {
+          "arrow_length": 1270000,
+          "extension_offset": 500000,
+          "keep_text_aligned": true,
+          "suppress_zeroes": false,
+          "text_position": 0,
+          "units_format": 1
+        },
+        "fab_line_width": 0.1,
+        "fab_text_italic": false,
+        "fab_text_size_h": 0.5,
+        "fab_text_size_v": 0.5,
+        "fab_text_thickness": 0.075,
+        "fab_text_upright": false,
+        "other_line_width": 0.15,
+        "other_text_italic": false,
+        "other_text_size_h": 0.5,
+        "other_text_size_v": 0.5,
+        "other_text_thickness": 0.075,
+        "other_text_upright": false,
+        "pads": {
+          "drill": 2.8,
+          "height": 2.8,
+          "width": 2.8
+        },
+        "silk_line_width": 0.15,
+        "silk_text_italic": false,
+        "silk_text_size_h": 0.7,
+        "silk_text_size_v": 0.7,
+        "silk_text_thickness": 0.15,
+        "silk_text_upright": false,
+        "zones": {
+          "min_clearance": 0.15
+        }
+      },
+      "diff_pair_dimensions": [
+        {
+          "gap": 0.0,
+          "via_gap": 0.0,
+          "width": 0.0
+        }
+      ],
+      "drc_exclusions": [],
+      "meta": {
+        "version": 2
+      },
+      "rule_severities": {
+        "annular_width": "error",
+        "clearance": "error",
+        "connection_width": "warning",
+        "copper_edge_clearance": "error",
+        "copper_sliver": "warning",
+        "courtyards_overlap": "error",
+        "diff_pair_gap_out_of_range": "error",
+        "diff_pair_uncoupled_length_too_long": "error",
+        "drill_out_of_range": "error",
+        "duplicate_footprints": "warning",
+        "extra_footprint": "warning",
+        "footprint": "error",
+        "footprint_symbol_mismatch": "warning",
+        "footprint_type_mismatch": "ignore",
+        "hole_clearance": "error",
+        "hole_near_hole": "error",
+        "holes_co_located": "warning",
+        "invalid_outline": "error",
+        "isolated_copper": "warning",
+        "item_on_disabled_layer": "error",
+        "items_not_allowed": "error",
+        "length_out_of_range": "error",
+        "lib_footprint_issues": "warning",
+        "lib_footprint_mismatch": "warning",
+        "malformed_courtyard": "error",
+        "microvia_drill_out_of_range": "error",
+        "missing_courtyard": "ignore",
+        "missing_footprint": "warning",
+        "net_conflict": "warning",
+        "npth_inside_courtyard": "ignore",
+        "padstack": "warning",
+        "pth_inside_courtyard": "ignore",
+        "shorting_items": "error",
+        "silk_edge_clearance": "warning",
+        "silk_over_copper": "warning",
+        "silk_overlap": "warning",
+        "skew_out_of_range": "error",
+        "solder_mask_bridge": "error",
+        "starved_thermal": "error",
+        "text_height": "warning",
+        "text_thickness": "warning",
+        "through_hole_pad_without_hole": "error",
+        "too_many_vias": "error",
+        "track_dangling": "warning",
+        "track_width": "error",
+        "tracks_crossing": "error",
+        "unconnected_items": "error",
+        "unresolved_variable": "error",
+        "via_dangling": "warning",
+        "zones_intersect": "error"
+      },
+      "rules": {
+        "max_error": 0.005,
+        "min_clearance": 0.0762,
+        "min_connection": 0.15,
+        "min_copper_edge_clearance": 0.2,
+        "min_hole_clearance": 0.1,
+        "min_hole_to_hole": 0.2,
+        "min_microvia_diameter": 0.2,
+        "min_microvia_drill": 0.1,
+        "min_resolved_spokes": 2,
+        "min_silk_clearance": 0.0762,
+        "min_text_height": 0.5,
+        "min_text_thickness": 0.075,
+        "min_through_hole_diameter": 0.15,
+        "min_track_width": 0.076,
+        "min_via_annular_width": 0.025,
+        "min_via_diameter": 0.2,
+        "solder_mask_clearance": 0.0,
+        "solder_mask_min_width": 0.0,
+        "solder_mask_to_copper_clearance": 0.0,
+        "use_height_for_length_calcs": true
+      },
+      "teardrop_options": [
+        {
+          "td_onpadsmd": true,
+          "td_onroundshapesonly": false,
+          "td_ontrackend": false,
+          "td_onviapad": true
+        }
+      ],
+      "teardrop_parameters": [
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 0,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
+          "td_target_name": "td_round_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 0,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
+          "td_target_name": "td_rect_shape",
+          "td_width_to_size_filter_ratio": 0.9
+        },
+        {
+          "td_allow_use_two_tracks": true,
+          "td_curve_segcount": 0,
+          "td_height_ratio": 1.0,
+          "td_length_ratio": 0.5,
+          "td_maxheight": 2.0,
+          "td_maxlen": 1.0,
+          "td_on_pad_in_zone": false,
+          "td_target_name": "td_track_end",
+          "td_width_to_size_filter_ratio": 0.9
+        }
+      ],
+      "track_widths": [
+        0.0,
+        0.08,
+        0.1,
+        0.15,
+        0.2,
+        0.22,
+        0.25,
+        0.3,
+        0.4,
+        0.5,
+        0.7
+      ],
+      "tuning_pattern_settings": {
+        "diff_pair_defaults": {
+          "corner_radius_percentage": 80,
+          "corner_style": 1,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.2,
+          "single_sided": false,
+          "spacing": 1.0
+        },
+        "diff_pair_skew_defaults": {
+          "corner_radius_percentage": 80,
+          "corner_style": 1,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.2,
+          "single_sided": false,
+          "spacing": 0.6
+        },
+        "single_track_defaults": {
+          "corner_radius_percentage": 80,
+          "corner_style": 1,
+          "max_amplitude": 1.0,
+          "min_amplitude": 0.2,
+          "single_sided": false,
+          "spacing": 0.6
+        }
+      },
+      "via_dimensions": [
+        {
+          "diameter": 0.0,
+          "drill": 0.0
+        },
+        {
+          "diameter": 0.25,
+          "drill": 0.15
+        },
+        {
+          "diameter": 0.3,
+          "drill": 0.15
+        },
+        {
+          "diameter": 0.6,
+          "drill": 0.3
+        },
+        {
+          "diameter": 0.8,
+          "drill": 0.4
+        }
+      ],
+      "zones_allow_external_fillets": true
+    },
+    "ipc2581": {
+      "dist": "",
+      "distpn": "",
+      "internal_id": "",
+      "mfg": "",
+      "mpn": ""
+    },
+    "layer_presets": [
+      {
+        "activeLayer": -2,
+        "layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          44
+        ],
+        "name": "GND",
+        "renderLayers": [
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          157,
+          158,
+          159,
+          160,
+          161,
+          164,
+          165
+        ]
+      },
+      {
+        "activeLayer": -2,
+        "layers": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          44
+        ],
+        "name": "PWR",
+        "renderLayers": [
+          125,
+          126,
+          127,
+          128,
+          129,
+          130,
+          133,
+          134,
+          135,
+          136,
+          137,
+          138,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          157,
+          158,
+          159,
+          160,
+          161,
+          164,
+          165
+        ]
+      }
+    ],
+    "viewports": []
+  },
+  "boards": [],
+  "cvpcb": {
+    "equivalence_files": []
+  },
+  "erc": {
+    "erc_exclusions": [],
+    "meta": {
+      "version": 0
+    },
+    "pin_map": [
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        2
+      ],
+      [
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        1,
+        2,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        1,
+        1,
+        1,
+        1,
+        1,
+        0,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        2,
+        2,
+        2,
+        2
+      ],
+      [
+        0,
+        2,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        0,
+        2,
+        1,
+        1,
+        0,
+        0,
+        1,
+        0,
+        2,
+        0,
+        0,
+        2
+      ],
+      [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    ],
+    "rule_severities": {
+      "bus_definition_conflict": "error",
+      "bus_entry_needed": "error",
+      "bus_to_bus_conflict": "error",
+      "bus_to_net_conflict": "error",
+      "conflicting_netclasses": "error",
+      "different_unit_footprint": "error",
+      "different_unit_net": "error",
+      "duplicate_reference": "error",
+      "duplicate_sheet_names": "error",
+      "endpoint_off_grid": "warning",
+      "extra_units": "error",
+      "global_label_dangling": "warning",
+      "hier_label_mismatch": "error",
+      "label_dangling": "error",
+      "lib_symbol_issues": "warning",
+      "missing_bidi_pin": "warning",
+      "missing_input_pin": "warning",
+      "missing_power_pin": "error",
+      "missing_unit": "warning",
+      "multiple_net_names": "warning",
+      "net_not_bus_member": "warning",
+      "no_connect_connected": "warning",
+      "no_connect_dangling": "warning",
+      "pin_not_connected": "error",
+      "pin_not_driven": "error",
+      "pin_to_pin": "error",
+      "power_pin_not_driven": "error",
+      "similar_labels": "warning",
+      "simulation_model_issue": "ignore",
+      "unannotated": "error",
+      "unit_value_mismatch": "error",
+      "unresolved_variable": "error",
+      "wire_dangling": "error"
+    }
+  },
+  "libraries": {
+    "pinned_footprint_libs": [],
+    "pinned_symbol_libs": []
+  },
+  "meta": {
+    "filename": "VersaSens_HeEx.kicad_pro",
+    "version": 1
+  },
+  "net_settings": {
+    "classes": [
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Default",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Inter_Signal",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.7,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Power",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.5,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.15,
+        "diff_pair_gap": 0.25,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.2,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "Signal",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.3,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      },
+      {
+        "bus_width": 12,
+        "clearance": 0.5,
+        "diff_pair_gap": 0.21,
+        "diff_pair_via_gap": 0.25,
+        "diff_pair_width": 0.22,
+        "line_style": 0,
+        "microvia_diameter": 0.3,
+        "microvia_drill": 0.1,
+        "name": "USB",
+        "pcb_color": "rgba(0, 0, 0, 0.000)",
+        "schematic_color": "rgba(0, 0, 0, 0.000)",
+        "track_width": 0.25,
+        "via_diameter": 0.8,
+        "via_drill": 0.4,
+        "wire_width": 6
+      }
+    ],
+    "meta": {
+      "version": 3
+    },
+    "net_colors": null,
+    "netclass_assignments": {
+      "Net-(C85-Pad2)": "Signal",
+      "Net-(IC1-BATT_CHGR)": "Power",
+      "Net-(IC1-IN_LDO0)": "Power",
+      "Net-(IC1-LXA)": "Power",
+      "Net-(IC1-REG)": "Signal",
+      "Net-(IC10-IO1)": "Signal",
+      "Net-(IC10-IO2)": "Signal",
+      "Net-(IC12-NR{slash}FB)": "Signal",
+      "Net-(IC14-CAP+)": "Signal",
+      "Net-(IC14-CAP-)": "Signal",
+      "Net-(IC17-VCAP1)": "Signal",
+      "Net-(IC17-VCAP2)": "Signal",
+      "Net-(IC17-VCAP3)": "Signal",
+      "Net-(IC17-VCAP4)": "Signal",
+      "Net-(IC17-VREFP)": "Signal",
+      "Net-(IC2-VBUS)": "Power",
+      "Net-(IC21-CAPN)": "Signal",
+      "Net-(IC21-CAPP)": "Signal",
+      "Net-(IC21-CPLL)": "Signal",
+      "Net-(IC21-RBIAS)": "Signal",
+      "Net-(IC21-VBG)": "Signal",
+      "Net-(IC21-VREF)": "Signal",
+      "Net-(IC7-CAL3)": "Signal",
+      "Net-(IC7-CAPN)": "Signal",
+      "Net-(IC7-CAPP)": "Signal",
+      "Net-(IC8-CAP)": "Signal",
+      "Net-(IC8-EN)": "Signal",
+      "Net-(IC8-HVLX_1)": "Power",
+      "Net-(IC8-LVLX_1)": "Power",
+      "Net-(J22-SSTXN1)": "Signal",
+      "Net-(J22-SSTXP1)": "Signal",
+      "Net-(J22-VBUS1.1)": "Signal",
+      "Net-(J3-Pin_3)": "Signal",
+      "Net-(U2-CAP)": "Signal",
+      "Net-(U2-ENV_SCL)": "Signal",
+      "Net-(U2-ENV_SDA)": "Signal"
+    },
+    "netclass_patterns": [
+      {
+        "netclass": "Power",
+        "pattern": "GND"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/Main/uUSB_D+"
+      },
+      {
+        "netclass": "USB",
+        "pattern": "/Main/uUSB_D-"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/uUSB_VBUS"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_SYS"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_TH"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_GPIO2"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_VL"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3V3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SCL"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/Battery+"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_AMUX"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_GPIO1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SDA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_nEN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_GPIO0"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_SBB1"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_SBB2"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+1V8"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_NIRQ"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_LXB"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_LDO0"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_BST"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/Main/PMU_SBB0"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/PMU_NRST"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Streaming"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Streaming_Storing"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Storing"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Man_RESET"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SoC_RESET_OUT"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Reset"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Soc_RESET"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/FCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SoC_FCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_CS"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_CS_IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_MOSI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_MOSI_IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_CLK_IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_MISO_IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_MISO"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/MEM_SW2_IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Start"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/INT4"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/INT3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/INT2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/INT1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Data"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/CSB2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/CSB1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SDO"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SDI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_MOSI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_BOOT"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_CS"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_RX"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_TX"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_INT"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/QSPI_CSN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/QSPI_IO1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/QSPI_IO2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/QSPI_IO3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/QSPI_CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/QSPI_IO0"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Conn_RESET"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SWDCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/SWDIO"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/Soc_RESET_IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_PS1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/BNO_PS0"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/LED_G"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/LED_Y"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/Main/LED_R"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/Reset"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/Start"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3.3V"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/INT4"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/INT3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/INT2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/INT1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/Data"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/FCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/CSB2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/CSB1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/SDO"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/SDI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/SCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/SDA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/SCL"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_DRVP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_DRVN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_CAL1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_ECGN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_ECGP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_BIP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_BIN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/ECG_PD1IN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/ECG_PD4IN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GNDA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_RLD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/ECG_PD2IN"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/ECG_PD3IN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_CSB"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_TRIG"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_INT2"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/LED1"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/LED3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/LED5"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_VREFECG"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_I2CADD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/LED2"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/LED4"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/LED6"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/ECG_LDOOUT"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_VMID"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/V_LED"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ECG_VREFPPG"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GNDPWR"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+5V"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ACG_Wake"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ACG_THSEL"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/ACG_LR"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/SKT_ADDR"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VCC"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/MIC_DATA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/MIC_CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/BBST_RSEL"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/BBST_INGOOD"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/ECG_PPG/BBST_PGOOD"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/PPG Board/PPG_LED2"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/PPG Board/PPG_V_LED"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/PPG Board/PPG_ECG_PD1"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/PPG Board/PPG_LED1"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/PPG Board/PPG_LED3"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "/ECG_PPG/PPG Board/PPG_PGND"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/Reset"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/Start"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3.3VP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/INT4"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/INT3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/INT2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/INT1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/Data"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/FCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/CSB2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/CSB1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/SDO"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/SDI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/SCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/SDA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/SCL"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG8N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG8P"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+2V5"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG7N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG7P"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG6N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG6P"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG5N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG5P"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "-2V5"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG4N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG4P"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/BIAS"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG3N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG3P"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG2N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG2P"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG1N"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG1P"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG1PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG2PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG3PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG4PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG5PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG6PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG7PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG8PI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG1NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG2NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG3NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG4NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG5NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG6NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG7NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG8NI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG_BIAS"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "-3V3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG_GPIO1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG_RLDINV"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EMG/EMG_WCT"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "GND3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/Reset"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/Start"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "+3.3VA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/INT4"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/INT3"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/INT2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/INT1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/Data"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/CLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/FCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/CSB2"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/CSB1"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/SDO"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/SDI"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/SCLK"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/SDA"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/SCL"
+      },
+      {
+        "netclass": "Power",
+        "pattern": "VCCQ"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_INT2B"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_VCM"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_DRVP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_ECGP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_ECGN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_BIP"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_BIN"
+      },
+      {
+        "netclass": "Signal",
+        "pattern": "/EDA/EDA_DRVN"
+      }
+    ]
+  },
+  "pcbnew": {
+    "last_paths": {
+      "gencad": "",
+      "idf": "",
+      "netlist": "",
+      "plot": "",
+      "pos_files": "",
+      "specctra_dsn": "",
+      "step": "VersaSens_Opti.step",
+      "svg": "",
+      "vrml": ""
+    },
+    "page_layout_descr_file": ""
+  },
+  "schematic": {
+    "annotate_start_num": 0,
+    "bom_export_filename": "",
+    "bom_fmt_presets": [],
+    "bom_fmt_settings": {
+      "field_delimiter": ",",
+      "keep_line_breaks": false,
+      "keep_tabs": false,
+      "name": "CSV",
+      "ref_delimiter": ",",
+      "ref_range_delimiter": "",
+      "string_delimiter": "\""
+    },
+    "bom_presets": [],
+    "bom_settings": {
+      "exclude_dnp": false,
+      "fields_ordered": [
+        {
+          "group_by": false,
+          "label": "Reference",
+          "name": "Reference",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "Value",
+          "name": "Value",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Datasheet",
+          "name": "Datasheet",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Footprint",
+          "name": "Footprint",
+          "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Qty",
+          "name": "${QUANTITY}",
+          "show": true
+        },
+        {
+          "group_by": true,
+          "label": "DNP",
+          "name": "${DNP}",
+          "show": true
+        }
+      ],
+      "filter_string": "",
+      "group_symbols": true,
+      "name": "Grouped By Value",
+      "sort_asc": true,
+      "sort_field": "Reference"
+    },
+    "connection_grid_size": 50.0,
+    "drawing": {
+      "dashed_lines_dash_length_ratio": 12.0,
+      "dashed_lines_gap_length_ratio": 3.0,
+      "default_line_thickness": 6.0,
+      "default_text_size": 50.0,
+      "field_names": [],
+      "intersheets_ref_own_page": false,
+      "intersheets_ref_prefix": "",
+      "intersheets_ref_short": false,
+      "intersheets_ref_show": false,
+      "intersheets_ref_suffix": "",
+      "junction_size_choice": 3,
+      "label_size_ratio": 0.375,
+      "operating_point_overlay_i_precision": 3,
+      "operating_point_overlay_i_range": "~A",
+      "operating_point_overlay_v_precision": 3,
+      "operating_point_overlay_v_range": "~V",
+      "overbar_offset_ratio": 1.23,
+      "pin_symbol_size": 25.0,
+      "text_offset_ratio": 0.15
+    },
+    "legacy_lib_dir": "",
+    "legacy_lib_list": [],
+    "meta": {
+      "version": 1
+    },
+    "net_format_name": "",
+    "page_layout_descr_file": "",
+    "plot_directory": "Plot/",
+    "spice_current_sheet_as_root": false,
+    "spice_external_command": "spice \"%I\"",
+    "spice_model_current_sheet_as_root": true,
+    "spice_save_all_currents": false,
+    "spice_save_all_dissipations": false,
+    "spice_save_all_voltages": false,
+    "subpart_first_id": 65,
+    "subpart_id_separator": 0
+  },
+  "sheets": [
+    [
+      "a9680c4f-e12a-4b20-bc4f-1fa44b63d443",
+      ""
+    ],
+    [
+      "7b36f882-0eca-4c48-be6d-6f9dac71ddf1",
+      "Main"
+    ],
+    [
+      "57050f97-543f-4c0c-8310-f9933b915123",
+      "ECG_PPG"
+    ],
+    [
+      "986b4ea0-a73a-4a4f-a4e1-01629c9af695",
+      "PPG Board"
+    ],
+    [
+      "3b3311f4-bf45-4453-ac7b-90d81b1284f5",
+      "EMG"
+    ],
+    [
+      "75d19714-d74d-456a-af4e-8fc949bc52fb",
+      "EDA"
+    ],
+    [
+      "5855970f-696f-4f77-b66c-40e9c8c8cc64",
+      "HEEPO"
+    ],
+    [
+      "b09db5ef-7fa7-486d-b35e-43780fd7fe7a",
+      "Expansion"
+    ]
+  ],
+  "text_variables": {}
+}
