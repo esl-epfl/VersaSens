@@ -1,0 +1,9 @@
+CAD design for the compact casing as STP and STL files.
+
+Recommendation for 3D printing:
+- Resolution: 0.15mm
+- PLA material
+- support on bed only
+- Front parts on the front face
+- Back parts on the back face
+- Main_back on the back face with an opened latch at 60°.
