@@ -121,7 +121,7 @@ int MAX30001_init(void)
     nrfx_err_t err_code = nrfx_spim_init(&max_spim_inst, &max_spim_config, NULL, NULL);
     if (err_code != NRFX_SUCCESS)
     {
-        LOG_ERR("twim_init failed with error code: %d\n", err_code);
+        LOG_ERR("spim_init failed with error code: %d\n", err_code);
         ret_val = -1;
     }
 
@@ -176,7 +176,7 @@ int MAX30001_reconfig(void)
         return -1;
     }
 
-    LOG_INF("MAX30001_reconfig");
+    // LOG_INF("MAX30001_reconfig");
     return 0;
 }
 

@@ -134,6 +134,8 @@ bool fifo_busy = false;
 
 bool write_failed = false;
 
+int write_counter = 0;
+
 /****************************************************************************/
 /**                                                                        **/
 /*                           EXPORTED FUNCTIONS                             */
@@ -511,7 +513,13 @@ void write_fifo_to_storage(void *arg1, void *arg2, void *arg3){
         write_failed = true;
     }
 
-    // fs_sync(&save_file);
+    write_counter++;
+    if (write_counter >= SAVE_COUNT)
+    {
+        fs_sync(&save_file);
+        write_counter = 0;
+    }
+
 
     k_thread_abort(k_current_get());
 }

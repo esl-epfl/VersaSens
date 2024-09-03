@@ -153,7 +153,7 @@ int ADS1298_init(void)
     nrfx_err_t err_code = nrfx_spim_init(&ads_spim_inst, &ads_spim_config, NULL, NULL);
     if (err_code != NRFX_SUCCESS)
     {
-        LOG_ERR("twim_init failed with error code: %d\n", err_code);
+        LOG_ERR("spim_init failed with error code: %d\n", err_code);
         ret_val = -1;
     }
 
