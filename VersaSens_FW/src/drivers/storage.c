@@ -107,6 +107,24 @@ struct{
  */
 void write_fifo_to_storage(void *arg1, void *arg2, void *arg3);
 
+/**
+ * @brief This function is the handler of the timer work
+ *  
+ * @param work : the work structure
+ * 
+ * @retval None
+ */
+void timer_work_handler(struct k_work *work);
+
+/**
+ * @brief This function is the handler of the timer
+ *  
+ * @param dummy : the timer structure
+ * 
+ * @retval None
+ */
+void my_timer_handler(struct k_timer *dummy);
+
 /****************************************************************************/
 /**                                                                        **/
 /*                           EXPORTED VARIABLES                             */
@@ -134,7 +152,11 @@ bool fifo_busy = false;
 
 bool write_failed = false;
 
-int write_counter = 0;
+K_WORK_DEFINE(my_work, timer_work_handler);
+
+K_TIMER_DEFINE(my_timer, my_timer_handler, NULL);
+
+bool sync_flag = false;
 
 /****************************************************************************/
 /**                                                                        **/
@@ -165,6 +187,8 @@ int storage_init(void)
         LOG_ERR("Error mounting the filesystem: %d", res);
         return res;
     }
+
+    k_timer_start(&my_timer, K_SECONDS(PERIOD_SYNC), K_SECONDS(PERIOD_SYNC));
 
     return 0;
 }
@@ -513,15 +537,29 @@ void write_fifo_to_storage(void *arg1, void *arg2, void *arg3){
         write_failed = true;
     }
 
-    write_counter++;
-    if (write_counter >= SAVE_COUNT)
+    if (sync_flag)
     {
         fs_sync(&save_file);
-        write_counter = 0;
+        sync_flag = false;
     }
 
-
     k_thread_abort(k_current_get());
+}
+
+/***************************************************************************/
+/***************************************************************************/
+
+void timer_work_handler(struct k_work *work)
+{
+    sync_flag = true;
+}
+
+/***************************************************************************/
+/***************************************************************************/
+
+void my_timer_handler(struct k_timer *dummy)
+{
+    k_work_submit(&my_work);
 }
 
 /****************************************************************************/

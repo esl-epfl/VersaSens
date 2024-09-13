@@ -65,8 +65,8 @@ Description : Original version.
 /* Append to an existing file */
 #define STORAGE_APPEND        FS_O_CREATE | FS_O_APPEND | FS_O_WRITE
 
-/* Number of writes before syncing the file */ 
-#define SAVE_COUNT 100 
+/* sync period in seconds */
+#define PERIOD_SYNC 5
 
 /****************************************************************************/
 /**                                                                        **/

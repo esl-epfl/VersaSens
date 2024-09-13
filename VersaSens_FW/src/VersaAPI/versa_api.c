@@ -176,14 +176,7 @@ int versa_init(void)
     nrf_gpio_cfg_output(START_PIN);
     nrf_gpio_pin_clear(START_PIN);
 
-    if(vconf_ads1298_en)
-    {
-        ret = sensors_list[ADS1298_ID].init();
-        if (ret == -2 & auto_disconnect)
-        {
-            vconf_ads1298_en = 0;
-        }
-    }
+
 
     if(vconf_max30001_en)
     {
@@ -193,6 +186,8 @@ int versa_init(void)
             vconf_max30001_en = 0;
         }
     }
+
+    k_sleep(K_MSEC(50));
 
     if(vconf_max86178_en)
     {
@@ -205,15 +200,32 @@ int versa_init(void)
         }
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_bno086_en)
     {
         sensors_list[BNO086_ID].init();
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_t5838_en)
     {
         sensors_list[T5838_ID].init();
     }
+    
+    k_sleep(K_MSEC(50));
+
+    if(vconf_ads1298_en)
+    {
+        ret = sensors_list[ADS1298_ID].init();
+        if (ret == -2 & auto_disconnect)
+        {
+            vconf_ads1298_en = 0;
+        }
+    }
+
+    k_sleep(K_MSEC(50));
 
     if(vconf_mlx90632_en)
     {
@@ -258,6 +270,8 @@ int versa_config(void)
         }
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_max30001_en)
     {
         if (sensors_list[MAX30001_ID].config != NULL) {
@@ -265,12 +279,16 @@ int versa_config(void)
         }
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_mlx90632_en)
     {
         if (sensors_list[MLX90632_ID].config != NULL) {
             sensors_list[MLX90632_ID].config();
         }
     }
+
+    k_sleep(K_MSEC(50));
 
     if(vconf_max86178_en)
     {
