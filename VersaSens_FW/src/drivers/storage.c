@@ -375,6 +375,11 @@ void storage_open_file(int conf)
         return;
     }
     LOG_INF("File %s created", full_path);
+
+    /*! Initialize the FIFO buffer */
+    fifo_buffer_index = 0;
+    fifo_buffer = fifo_buffers.fifo_buffer1;
+    
     return;
 }
 /***************************************************************************/
