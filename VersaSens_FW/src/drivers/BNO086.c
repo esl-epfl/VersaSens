@@ -179,12 +179,10 @@ int bno086_start_stream(void)
 
     /*! Start a UART reception */
     status = nrfx_uarte_rx(&uarte_inst, bno_frame, BNO086_RVC_MSG_LENGTH);
-    NRFX_ASSERT(status == NRFX_SUCCESS);
 
     bno_frame = bno_frames.bno_frame2;
 
     status = nrfx_uarte_rx(&uarte_inst, bno_frame, BNO086_RVC_MSG_LENGTH);
-    NRFX_ASSERT(status == NRFX_SUCCESS);
 
     LOG_INF("UARTE instance started\n");
 
@@ -206,9 +204,9 @@ int bno086_stop_stream(void)
 
     /*! Stop any ongoing reception */
     status = nrfx_uarte_rx_abort(&uarte_inst, 0, 0);
-    NRFX_ASSERT(status == NRFX_SUCCESS);
+
     status = nrfx_uarte_rx_abort(&uarte_inst, 0, 0);
-    NRFX_ASSERT(status == NRFX_SUCCESS);
+
 
     LOG_INF("UARTE instance stopped\n");
 
@@ -273,7 +271,6 @@ static void uarte_handler(nrfx_uarte_event_t const * p_event, void * p_context)
         
         /*! Start a new reception */
         status = nrfx_uarte_rx(p_inst, bno_frame, BNO086_RVC_MSG_LENGTH);
-        NRFX_ASSERT(status == NRFX_SUCCESS);
 
         k_sem_give(&BNO086_save_thread_sem);
         return;
@@ -350,7 +347,6 @@ void work_handler_bno086_delayed_start(struct k_work *work)
     nrfx_uarte_rx_abort(&uarte_inst, 0, 0);
     /*! Start a UART reception */
     status = nrfx_uarte_rx(&uarte_inst, bno_frame, BNO086_RVC_MSG_LENGTH);
-    NRFX_ASSERT(status == NRFX_SUCCESS);
 }
 
 void bno086_save_thread_func(void *arg1, void *arg2, void *arg3)

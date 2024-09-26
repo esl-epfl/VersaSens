@@ -103,8 +103,29 @@ static const struct bt_data ad[] = {
 /**                                                                        **/
 /****************************************************************************/
 
+/*
+ * @brief Function to start advertising
+ * 
+ * @param work : work structure
+ * 
+ * @retval None
+ */
 static void start_advertising_coded(struct k_work *work);
-static void notify_work_handler(struct k_work *work);
+
+/*
+ * @brief Function to set value of the status characteristic
+ * 
+ * @param conn : connection structure
+ * @param attr : attribute structure
+ * @param buf : buffer
+ * @param len : length
+ * @param offset : offset
+ * @param flags : flags
+ * 
+ * @retval None
+ */
+static ssize_t read_status(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+			    const void *buf, uint16_t len, uint16_t offset, uint8_t flags);
 
 /****************************************************************************/
 /**                                                                        **/
@@ -119,7 +140,6 @@ static void notify_work_handler(struct k_work *work);
 /****************************************************************************/
 
 static K_WORK_DEFINE(start_advertising_worker, start_advertising_coded);
-static K_WORK_DELAYABLE_DEFINE(notify_work, notify_work_handler);
 
 BT_GATT_SERVICE_DEFINE(TEST, BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_128(BT_UUID_CUSTOM_SERVICE)),
 	BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(BT_UUID_CUSTOM_CHARA), BT_GATT_CHRC_NOTIFY | BT_GATT_CHRC_READ,
@@ -127,6 +147,8 @@ BT_GATT_SERVICE_DEFINE(TEST, BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_128(BT_UUID
 	BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
 	BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(BT_UUID_CUSTOM_CHARA_WRITE), BT_GATT_CHRC_WRITE,
 						BT_GATT_PERM_WRITE, NULL, NULL, NULL),
+	BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(BT_UUID_CUSTOM_CHARA_STATUS), BT_GATT_CHRC_READ,
+						BT_GATT_PERM_READ | BT_GATT_PERM_WRITE, read_status, NULL, NULL),
 );
 
 K_FIFO_DEFINE(sensor_fifo);
@@ -136,6 +158,8 @@ struct k_thread sensor_thread_data;
 static struct bt_gatt_exchange_params exchange_params;
 
 bool stream_data = false;
+
+uint8_t status[1] = {0x00};
 
 /****************************************************************************/
 /**                                                                        **/
@@ -256,22 +280,6 @@ static int create_advertising_coded(void)
 /****************************************************************************/
 /****************************************************************************/
 
-static void start_advertising_coded(struct k_work *work)
-{
-	int err;
-
-	err = bt_le_ext_adv_start(adv, NULL);
-	if (err) {
-		LOG_ERR("Failed to start advertising set (err %d)\n", err);
-		return;
-	}
-
-	printk("Advertiser %p set started\n", adv);
-}
-
-/****************************************************************************/
-/****************************************************************************/
-
 static void hrs_notify(void)
 {
 	static uint8_t heartrate = 100;
@@ -282,24 +290,6 @@ static void hrs_notify(void)
 	}
 
 	bt_hrs_notify(heartrate);
-}
-
-/****************************************************************************/
-/****************************************************************************/
-
-static void notify_work_handler(struct k_work *work)
-{
-	/* Services data simulation. */
-	hrs_notify();
-	bas_notify();
-
-	static uint8_t random_val = 100;
-	random_val++;
-	if (random_val == 160) {
-		random_val = 100;
-	}
-
-	k_work_reschedule(k_work_delayable_from_work(work), K_MSEC(NOTIFY_INTERVAL));
 }
 
 /****************************************************************************/
@@ -404,12 +394,41 @@ void disable_stream_data(void)
 	stream_data = false;
 }
 
+/****************************************************************************/
+/****************************************************************************/
+
+void set_status(uint8_t new_status)
+{
+	status[0] = new_status;
+}
 
 /****************************************************************************/
 /**                                                                        **/
 /*                            LOCAL FUNCTIONS                               */
 /**                                                                        **/
 /****************************************************************************/
+
+static ssize_t read_status(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+			    const void *buf, uint16_t len, uint16_t offset, uint8_t flags){
+	
+	return bt_gatt_attr_read(conn, attr, buf, len, offset, status, sizeof(status));			
+}
+
+/****************************************************************************/
+/****************************************************************************/
+
+static void start_advertising_coded(struct k_work *work)
+{
+	int err;
+
+	err = bt_le_ext_adv_start(adv, NULL);
+	if (err) {
+		LOG_ERR("Failed to start advertising set (err %d)\n", err);
+		return;
+	}
+
+	printk("Advertiser %p set started\n", adv);
+}
 
 /****************************************************************************/
 /**                                                                        **/

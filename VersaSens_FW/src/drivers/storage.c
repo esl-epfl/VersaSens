@@ -535,7 +535,8 @@ void write_fifo_to_storage(void *arg1, void *arg2, void *arg3){
         fifo_buffer_write = fifo_buffers.fifo_buffer2;
     else
         fifo_buffer_write = fifo_buffers.fifo_buffer1;
-
+    // check if disk busy 
+    
     /*! Write the file */
     if (fs_write(&save_file, fifo_buffer_write, FIFO_BUFFER_SIZE) != FIFO_BUFFER_SIZE) {
         LOG_ERR("Failed to write to file");
@@ -548,7 +549,7 @@ void write_fifo_to_storage(void *arg1, void *arg2, void *arg3){
         sync_flag = false;
     }
 
-    k_thread_abort(k_current_get());
+    // k_thread_abort(k_current_get());
 }
 
 /***************************************************************************/

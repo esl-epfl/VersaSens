@@ -60,9 +60,13 @@ Description : Original version.
 #define BT_UUID_CUSTOM_CHARA \ 	
 	BT_UUID_128_ENCODE(0xE11D2E01, 0x04AB, 0x4DA5, 0xB66A, 0xEECB738F90F3)
 
-/* Custom characteristic value UUID */
+/* Custom characteristic UUID */
 #define BT_UUID_CUSTOM_CHARA_WRITE \	
     BT_UUID_128_ENCODE(0xE11D2E02, 0x04AB, 0x4DA5, 0xB66A, 0xEECB738F90F3)
+
+/* Custom characteristic UUID */
+#define BT_UUID_CUSTOM_CHARA_STATUS \	
+    BT_UUID_128_ENCODE(0xE11D2E03, 0x04AB, 0x4DA5, 0xB66A, 0xEECB738F90F3)
 
 /* Maximum size of the data from the sensor */
 #define MAX_DATA_SIZE 244
@@ -142,6 +146,13 @@ void enable_stream_data(void);
     * @brief Disable the stream data from the sensors
 */
 void disable_stream_data(void);
+
+/*
+    * @brief Set the status characteristic
+    * 
+    * @param new_status the new status to be set
+*/
+void set_status(uint8_t new_status);
 
 /****************************************************************************/
 /**                                                                        **/

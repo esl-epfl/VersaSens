@@ -232,6 +232,8 @@ int versa_init(void)
         sensors_list[MLX90632_ID].init();
     }
 
+    set_status(0x01);
+
     LOG_INF("Versa API sensors initialized\n");
     return 0;
 }
@@ -532,6 +534,7 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
                 versa_sensor_stop();
             }
             versa_set_mode(MODE_IDLE);
+            set_status(0x01);
         }
         else if (nrf_gpio_pin_read(MODE_STORE_PIN) > 0 | (nrf_gpio_pin_read(MODE_IDLE_PIN)==0 & nrf_gpio_pin_read(MODE_STREAM_PIN)==0))
         {
@@ -542,6 +545,7 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
                 versa_sensor_start();
             }
             versa_set_mode(MODE_STORE);
+            set_status(0x02);
         }
         else if (nrf_gpio_pin_read(MODE_STREAM_PIN) > 0 | (nrf_gpio_pin_read(MODE_IDLE_PIN)==0 & nrf_gpio_pin_read(MODE_STORE_PIN)==0))
         {
@@ -552,6 +556,7 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
                 versa_sensor_start();
             }
             versa_set_mode(MODE_STREAM);
+            set_status(0x03);
         }
 
         k_sleep(K_MSEC(200));
