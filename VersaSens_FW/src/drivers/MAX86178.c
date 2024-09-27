@@ -284,9 +284,9 @@ int max86178_read_seq_reg(uint8_t start_addr, uint8_t *data, uint8_t num_bytes)
 int max86178_start_thread(void)
 {
     MAX86178_REG reg;
-    reg.REG_PPG_CONFIG_1.b.MEAS1_EN = 0b1;
+    reg.REG_PPG_CONFIG_1.b.MEAS1_EN = 0b0;
     reg.REG_PPG_CONFIG_1.b.MEAS2_EN = 0b1;
-    reg.REG_PPG_CONFIG_1.b.MEAS3_EN = 0b1;
+    reg.REG_PPG_CONFIG_1.b.MEAS3_EN = 0b0;
     reg.REG_PPG_CONFIG_1.b.MEAS4_EN = 0b1;
     reg.REG_PPG_CONFIG_1.b.MEAS5_EN = 0b0;
     reg.REG_PPG_CONFIG_1.b.MEAS6_EN = 0b0;
@@ -490,7 +490,7 @@ int max86178_config(void)
     reg.REG_MEAS1_CONFIG_4.b.MEAS1_PD_SETLNG = 0b01;
     max86178_write_reg(REG_MEAS1_CONFIG_4_Addr, reg.REG_MEAS1_CONFIG_4.w);
 
-    reg.REG_MEAS1_LEDA_CURRENT.b.MEAS1_DRVA_PA = 0x08;
+    reg.REG_MEAS1_LEDA_CURRENT.b.MEAS1_DRVA_PA = 0x04;
     max86178_write_reg(REG_MEAS1_LEDA_CURRENT_Addr, reg.REG_MEAS1_LEDA_CURRENT.w);
 
     reg.REG_MEAS1_LEDB_CURRENT.b.MEAS1_DRVB_PA = 0x00;
@@ -507,7 +507,7 @@ int max86178_config(void)
     reg.REG_MEAS2_SELECTS.b.MEAS2_DRVB = 0b001;
     max86178_write_reg(REG_MEAS2_SELECTS_Addr, reg.REG_MEAS2_SELECTS.w);
 
-    reg.REG_MEAS2_CONFIG_1.b.MEAS2_AVER = 0b001;
+    reg.REG_MEAS2_CONFIG_1.b.MEAS2_AVER = 0b100;
     reg.REG_MEAS2_CONFIG_1.b.MEAS2_TINT = 0b11;
     reg.REG_MEAS2_CONFIG_1.b.MEAS2_FILT_SEL = 0b0;
     reg.REG_MEAS2_CONFIG_1.b.MEAS2_FILT2_SEL = 0b1;
@@ -518,6 +518,10 @@ int max86178_config(void)
     reg.REG_MEAS2_CONFIG_2.b.MEAS2_PPG2_ADC_RGE = 0b11;
     max86178_write_reg(REG_MEAS2_CONFIG_2_Addr, reg.REG_MEAS2_CONFIG_2.w);
 
+    reg.REG_MEAS2_CONFIG_3.b.MEAS2_PPG1_DACOFF = 0x02;
+    reg.REG_MEAS2_CONFIG_3.b.MEAS2_PPG2_DACOFF = 0x00;
+    max86178_write_reg(REG_MEAS2_CONFIG_3_Addr, reg.REG_MEAS2_CONFIG_3.w);
+
     reg.REG_MEAS2_CONFIG_4.b.MEAS2_LED_RGE = 0b01;
     reg.REG_MEAS2_CONFIG_4.b.MEAS2_LED_SETLNG = 0b01;
     reg.REG_MEAS2_CONFIG_4.b.MEAS2_PD_SETLNG = 0b01;
@@ -526,7 +530,7 @@ int max86178_config(void)
     reg.REG_MEAS2_LEDA_CURRENT.b.MEAS2_DRVA_PA = 0x00;
     max86178_write_reg(REG_MEAS2_LEDA_CURRENT_Addr, reg.REG_MEAS2_LEDA_CURRENT.w);
 
-    reg.REG_MEAS2_LEDB_CURRENT.b.MEAS2_DRVB_PA = 0x08;
+    reg.REG_MEAS2_LEDB_CURRENT.b.MEAS2_DRVB_PA = 0x04;
     max86178_write_reg(REG_MEAS2_LEDB_CURRENT_Addr, reg.REG_MEAS2_LEDB_CURRENT.w);
 
     reg.REG_MEAS2_CONFIG_5.b.MEAS2_PD1_SEL = 0b10;
@@ -556,7 +560,7 @@ int max86178_config(void)
     reg.REG_MEAS3_CONFIG_4.b.MEAS3_PD_SETLNG = 0b01;
     max86178_write_reg(REG_MEAS3_CONFIG_4_Addr, reg.REG_MEAS3_CONFIG_4.w);
 
-    reg.REG_MEAS3_LEDA_CURRENT.b.MEAS3_DRVA_PA = 0x08;//0x3C;
+    reg.REG_MEAS3_LEDA_CURRENT.b.MEAS3_DRVA_PA = 0x04;//0x3C;
     max86178_write_reg(REG_MEAS3_LEDA_CURRENT_Addr, reg.REG_MEAS3_LEDA_CURRENT.w);
 
     reg.REG_MEAS3_LEDB_CURRENT.b.MEAS3_DRVB_PA = 0x00;

@@ -68,6 +68,9 @@ Description : Original version.
 #define BT_UUID_CUSTOM_CHARA_STATUS \	
     BT_UUID_128_ENCODE(0xE11D2E03, 0x04AB, 0x4DA5, 0xB66A, 0xEECB738F90F3)
 
+#define BT_UUID_CUSTOM_CHARA_CMD \
+    BT_UUID_128_ENCODE(0xE11D2E04, 0x04AB, 0x4DA5, 0xB66A, 0xEECB738F90F3)	
+
 /* Maximum size of the data from the sensor */
 #define MAX_DATA_SIZE 244
 

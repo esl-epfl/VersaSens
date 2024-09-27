@@ -122,10 +122,25 @@ static void start_advertising_coded(struct k_work *work);
  * @param offset : offset
  * @param flags : flags
  * 
- * @retval None
+ * @retval ssize_t : number of bytes read
  */
 static ssize_t read_status(struct bt_conn *conn, const struct bt_gatt_attr *attr,
 			    const void *buf, uint16_t len, uint16_t offset, uint8_t flags);
+
+/*
+ * @brief Function to write the command characteristic
+ * 
+ * @param conn : connection structure
+ * @param attr : attribute structure
+ * @param buf : buffer
+ * @param len : length
+ * @param offset : offset
+ * @param flags : flags
+ * 
+ * @retval ssize_t : number of bytes written
+ */
+static ssize_t write_cmd(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+			 const void *buf, uint16_t len, uint16_t offset, uint8_t flags);
 
 /****************************************************************************/
 /**                                                                        **/
@@ -149,6 +164,9 @@ BT_GATT_SERVICE_DEFINE(TEST, BT_GATT_PRIMARY_SERVICE(BT_UUID_DECLARE_128(BT_UUID
 						BT_GATT_PERM_WRITE, NULL, NULL, NULL),
 	BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(BT_UUID_CUSTOM_CHARA_STATUS), BT_GATT_CHRC_READ,
 						BT_GATT_PERM_READ | BT_GATT_PERM_WRITE, read_status, NULL, NULL),
+	BT_GATT_CHARACTERISTIC(BT_UUID_DECLARE_128(BT_UUID_CUSTOM_CHARA_CMD), BT_GATT_CHRC_WRITE | BT_GATT_CHRC_INDICATE,
+						BT_GATT_PERM_WRITE, NULL, write_cmd, NULL),
+	BT_GATT_CCC(NULL, BT_GATT_PERM_READ | BT_GATT_PERM_WRITE),
 );
 
 K_FIFO_DEFINE(sensor_fifo);
@@ -275,21 +293,6 @@ static int create_advertising_coded(void)
 	}
 
 	return 0;
-}
-
-/****************************************************************************/
-/****************************************************************************/
-
-static void hrs_notify(void)
-{
-	static uint8_t heartrate = 100;
-
-	heartrate++;
-	if (heartrate == 160) {
-		heartrate = 100;
-	}
-
-	bt_hrs_notify(heartrate);
 }
 
 /****************************************************************************/
@@ -428,6 +431,32 @@ static void start_advertising_coded(struct k_work *work)
 	}
 
 	printk("Advertiser %p set started\n", adv);
+}
+
+/****************************************************************************/
+/****************************************************************************/
+
+static ssize_t write_cmd(struct bt_conn *conn, const struct bt_gatt_attr *attr,
+			 const void *buf, uint16_t len, uint16_t offset, uint8_t flags)
+{
+	uint8_t *value = *((uint8_t *)buf);
+
+	// send indication to the client
+	uint8_t response = value + 0xA0;
+	struct bt_gatt_indicate_params indicate_params;
+	indicate_params.attr = &TEST.attrs[4];
+	indicate_params.data = &response;
+	indicate_params.len = sizeof(response);
+	indicate_params.func = NULL;
+	indicate_params.destroy = NULL;
+
+	int err = bt_gatt_indicate(conn, &indicate_params);
+
+	if (err) {
+        printk("Indication failed, error: %d\n", err);
+    }
+
+	return len;
 }
 
 /****************************************************************************/
