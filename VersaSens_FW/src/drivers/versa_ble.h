@@ -74,6 +74,13 @@ Description : Original version.
 /* Maximum size of the data from the sensor */
 #define MAX_DATA_SIZE 244
 
+/* BLE commands */
+#define BLE_CMD_START_OW    0x08
+#define BLE_CMD_STOP_OW     0x09
+#define BLE_CMD_MODE_IDLE   0x01
+#define BLE_CMD_MODE_STORE  0x02
+#define BLE_CMD_MODE_STREAM 0x03
+
 /****************************************************************************/
 /**                                                                        **/
 /**                       TYPEDEFS AND STRUCTURES                          **/
@@ -100,7 +107,8 @@ struct battery_data {
 
 #ifndef _VERSA_BLE_C_SRC
 
-
+extern bool BLE_overwrite;
+extern uint8_t BLE_cmd;
 
 #endif  /* _VERSA_BLE_C_SRC */
 

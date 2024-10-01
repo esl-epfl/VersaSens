@@ -178,8 +178,8 @@ Description : Original version.
 #define REG_MEAS6_LEDB_CURRENT_Addr      0x5F // MEAS6 LEDB current register
 
 /*! PPG threshold interrupt registers*/
-#define REG_THRESHOLDS_MEAS_SEL_Addr     0x70 // Thresholds measurement select register
-#define REG_THRESHOLDS_HYST_Addr         0x71 // Thresholds hysteresis register
+#define REG_THRESHOLD_MEAS_SEL_Addr     0x70 // Thresholds measurement select register
+#define REG_THRESHOLD_HYST_Addr         0x71 // Thresholds hysteresis register
 #define REG_PPG_HI_THRESHOLD1_Addr      0x72 // High thresholds register 1
 #define REG_PPG_LO_THRESHOLD1_Addr      0x73 // Low thresholds register 1
 #define REG_PPG_HI_THRESHOLD2_Addr      0x74 // High thresholds register 2
