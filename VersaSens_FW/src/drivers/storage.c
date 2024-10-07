@@ -107,6 +107,24 @@ struct{
  */
 void write_fifo_to_storage(void *arg1, void *arg2, void *arg3);
 
+/**
+ * @brief This function is the handler of the timer work
+ *  
+ * @param work : the work structure
+ * 
+ * @retval None
+ */
+void timer_work_handler(struct k_work *work);
+
+/**
+ * @brief This function is the handler of the timer
+ *  
+ * @param dummy : the timer structure
+ * 
+ * @retval None
+ */
+void my_timer_handler(struct k_timer *dummy);
+
 /****************************************************************************/
 /**                                                                        **/
 /*                           EXPORTED VARIABLES                             */
@@ -133,6 +151,12 @@ bool writing_in_progress = false;
 bool fifo_busy = false;
 
 bool write_failed = false;
+
+K_WORK_DEFINE(my_work, timer_work_handler);
+
+K_TIMER_DEFINE(my_timer, my_timer_handler, NULL);
+
+bool sync_flag = false;
 
 /****************************************************************************/
 /**                                                                        **/
@@ -163,6 +187,8 @@ int storage_init(void)
         LOG_ERR("Error mounting the filesystem: %d", res);
         return res;
     }
+
+    k_timer_start(&my_timer, K_SECONDS(PERIOD_SYNC), K_SECONDS(PERIOD_SYNC));
 
     return 0;
 }
@@ -349,6 +375,11 @@ void storage_open_file(int conf)
         return;
     }
     LOG_INF("File %s created", full_path);
+
+    /*! Initialize the FIFO buffer */
+    fifo_buffer_index = 0;
+    fifo_buffer = fifo_buffers.fifo_buffer1;
+    
     return;
 }
 /***************************************************************************/
@@ -504,16 +535,37 @@ void write_fifo_to_storage(void *arg1, void *arg2, void *arg3){
         fifo_buffer_write = fifo_buffers.fifo_buffer2;
     else
         fifo_buffer_write = fifo_buffers.fifo_buffer1;
-
+    // check if disk busy 
+    
     /*! Write the file */
     if (fs_write(&save_file, fifo_buffer_write, FIFO_BUFFER_SIZE) != FIFO_BUFFER_SIZE) {
         LOG_ERR("Failed to write to file");
         write_failed = true;
     }
 
-    // fs_sync(&save_file);
+    if (sync_flag)
+    {
+        fs_sync(&save_file);
+        sync_flag = false;
+    }
 
-    k_thread_abort(k_current_get());
+    // k_thread_abort(k_current_get());
+}
+
+/***************************************************************************/
+/***************************************************************************/
+
+void timer_work_handler(struct k_work *work)
+{
+    sync_flag = true;
+}
+
+/***************************************************************************/
+/***************************************************************************/
+
+void my_timer_handler(struct k_timer *dummy)
+{
+    k_work_submit(&my_work);
 }
 
 /****************************************************************************/

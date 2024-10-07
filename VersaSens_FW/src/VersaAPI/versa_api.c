@@ -176,15 +176,6 @@ int versa_init(void)
     nrf_gpio_cfg_output(START_PIN);
     nrf_gpio_pin_clear(START_PIN);
 
-    if(vconf_ads1298_en)
-    {
-        ret = sensors_list[ADS1298_ID].init();
-        if (ret == -2 & auto_disconnect)
-        {
-            vconf_ads1298_en = 0;
-        }
-    }
-
     if(vconf_max30001_en)
     {
         ret = sensors_list[MAX30001_ID].init();
@@ -193,6 +184,8 @@ int versa_init(void)
             vconf_max30001_en = 0;
         }
     }
+
+    k_sleep(K_MSEC(50));
 
     if(vconf_max86178_en)
     {
@@ -205,20 +198,39 @@ int versa_init(void)
         }
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_bno086_en)
     {
         sensors_list[BNO086_ID].init();
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_t5838_en)
     {
         sensors_list[T5838_ID].init();
     }
+    
+    k_sleep(K_MSEC(50));
+
+    if(vconf_ads1298_en)
+    {
+        ret = sensors_list[ADS1298_ID].init();
+        if (ret == -2 & auto_disconnect)
+        {
+            vconf_ads1298_en = 0;
+        }
+    }
+
+    k_sleep(K_MSEC(50));
 
     if(vconf_mlx90632_en)
     {
         sensors_list[MLX90632_ID].init();
     }
+
+    set_status(0x01);
 
     LOG_INF("Versa API sensors initialized\n");
     return 0;
@@ -258,6 +270,8 @@ int versa_config(void)
         }
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_max30001_en)
     {
         if (sensors_list[MAX30001_ID].config != NULL) {
@@ -265,12 +279,16 @@ int versa_config(void)
         }
     }
 
+    k_sleep(K_MSEC(50));
+
     if(vconf_mlx90632_en)
     {
         if (sensors_list[MLX90632_ID].config != NULL) {
             sensors_list[MLX90632_ID].config();
         }
     }
+
+    k_sleep(K_MSEC(50));
 
     if(vconf_max86178_en)
     {
@@ -505,7 +523,8 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
     while (1)
     {
         
-        if (nrf_gpio_pin_read(MODE_IDLE_PIN) > 0 | (nrf_gpio_pin_read(MODE_STORE_PIN)==0 & nrf_gpio_pin_read(MODE_STREAM_PIN)==0))
+        if (((nrf_gpio_pin_read(MODE_IDLE_PIN) > 0 | (nrf_gpio_pin_read(MODE_STORE_PIN)==0 & 
+              nrf_gpio_pin_read(MODE_STREAM_PIN)==0)) & !BLE_overwrite) | (BLE_overwrite & BLE_cmd == BLE_CMD_MODE_IDLE))
         {
             disable_stream_data();
             if(sensor_started)
@@ -514,8 +533,10 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
                 versa_sensor_stop();
             }
             versa_set_mode(MODE_IDLE);
+            set_status(0x01);
         }
-        else if (nrf_gpio_pin_read(MODE_STORE_PIN) > 0 | (nrf_gpio_pin_read(MODE_IDLE_PIN)==0 & nrf_gpio_pin_read(MODE_STREAM_PIN)==0))
+        else if (((nrf_gpio_pin_read(MODE_STORE_PIN) > 0 | (nrf_gpio_pin_read(MODE_IDLE_PIN)==0 & 
+                   nrf_gpio_pin_read(MODE_STREAM_PIN)==0)) & !BLE_overwrite) | (BLE_overwrite & BLE_cmd == BLE_CMD_MODE_STORE))
         {
             disable_stream_data();
             if(!sensor_started)
@@ -524,8 +545,10 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
                 versa_sensor_start();
             }
             versa_set_mode(MODE_STORE);
+            set_status(0x02);
         }
-        else if (nrf_gpio_pin_read(MODE_STREAM_PIN) > 0 | (nrf_gpio_pin_read(MODE_IDLE_PIN)==0 & nrf_gpio_pin_read(MODE_STORE_PIN)==0))
+        else if (((nrf_gpio_pin_read(MODE_STREAM_PIN) > 0 | (nrf_gpio_pin_read(MODE_IDLE_PIN)==0 & 
+                   nrf_gpio_pin_read(MODE_STORE_PIN)==0)) & !BLE_overwrite) | (BLE_overwrite & BLE_cmd == BLE_CMD_MODE_STREAM))
         {
             enable_stream_data();
             if(!sensor_started)
@@ -534,6 +557,7 @@ void mode_thread_func(void *arg1, void *arg2, void *arg3)
                 versa_sensor_start();
             }
             versa_set_mode(MODE_STREAM);
+            set_status(0x03);
         }
 
         k_sleep(K_MSEC(200));

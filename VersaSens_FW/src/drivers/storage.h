@@ -65,6 +65,9 @@ Description : Original version.
 /* Append to an existing file */
 #define STORAGE_APPEND        FS_O_CREATE | FS_O_APPEND | FS_O_WRITE
 
+/* sync period in seconds */
+#define PERIOD_SYNC 5
+
 /****************************************************************************/
 /**                                                                        **/
 /**                       TYPEDEFS AND STRUCTURES                          **/
