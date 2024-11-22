@@ -12,12 +12,14 @@ add_definitions(-DCONFIG_OPUS_MODE_CELT)
 add_definitions(-DCONFIG_OPUS_MODE_SILK)
 add_definitions(-DFF_USE_FASTSEEK=1)
 
+add_definitions(-DUSER_APP_STACK_SIZE=1024)
 
 include_directories(
     opus-1.2.1
     opus-1.2.1/arm
     src/drivers
     src/VersaAPI
+    src/user_app/inc
 )
 
 project(VersaSens)
@@ -35,9 +37,14 @@ file(GLOB API
     "src/VersaAPI/*.c" 
 )
 
+file(GLOB USER_APP 
+    "src/user_app/src/*.c" 
+)
+
 target_sources(app PRIVATE 
     src/testbench/test_led.c 
     ${DRIVERS}
     ${API}
     ${OPUS_SOURCES}
+    ${USER_APP}
 )
