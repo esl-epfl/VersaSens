@@ -25,11 +25,15 @@
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
+#define QSPI_CS 18
 
 int main(void)
 {
     nrf_gpio_cfg_output(START_PIN);
     nrf_gpio_pin_set(START_PIN);
+
+    nrf_gpio_pin_set(QSPI_CS);
+    nrf_gpio_cfg_output(QSPI_CS);
     
     versa_init();
     // enable_auto_connect();
